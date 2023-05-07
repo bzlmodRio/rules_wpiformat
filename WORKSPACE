@@ -1,12 +1,13 @@
 workspace(name = "rules_wpiformat")
 
-load("//wpiformat:load_wpiformat_rules_dependencies.bzl", "rules_wpiformat_dependencies")
+# Rule Dependencies
+load("//dependencies:load_rule_dependencies.bzl", "load_wpiformat_rule_dependencies")
 
-rules_wpiformat_dependencies()
+load_wpiformat_rule_dependencies()
 
-# Toolchains
+# Transitive Dependencies
 
-load("//wpiformat:load_dependencies.bzl", "load_wpiformat_dependencies")
+load("//dependencies:load_dependencies.bzl", "load_wpiformat_dependencies")
 
 load_wpiformat_dependencies()
 

@@ -1,6 +1,7 @@
 module(
     name = "rules_wpiformat",
     version = "2022.30",
+    compatibility_level = 1,
 )
 
 bazel_dep(name = "rules_python", version = "0.16.2")
