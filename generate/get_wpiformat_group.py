@@ -6,6 +6,7 @@ def get_wpiformat_group():
         short_name="wpiformat",
         is_java=False,
         is_python=True,
+        has_skylib=True,
         include_wpiformat=False,
         repo_name="rules_wpiformat",
         version="2022.30",
