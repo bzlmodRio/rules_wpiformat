@@ -1,10 +1,10 @@
 module(
     name = "rules_wpiformat",
-    version = "2023.28",
+    version = "2024.34",
     compatibility_level = 1,
 )
 
-bazel_dep(name = "rules_python", version = "0.24.0")
+bazel_dep(name = "rules_python", version = "0.30.0")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
