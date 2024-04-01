@@ -33,6 +33,9 @@ def main():
     mandatory_dependencies = create_default_mandatory_settings(GenericCliArgs(args))
     generate_styleguide_rule(REPO_DIR, group, mandatory_dependencies)
 
+    with open(os.path.join(REPO_DIR, "requirements.txt"), "w") as f:
+        f.write(f"wpiformat=={group.version}\n")
+
 
 if __name__ == "__main__":
     """
