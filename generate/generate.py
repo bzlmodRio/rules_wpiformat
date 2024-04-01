@@ -38,7 +38,6 @@ def main():
     with open(os.path.join(REPO_DIR, "requirements.txt"), "w") as f:
         f.write(f"wpiformat=={group.version}\n")
 
-        
     template_files = [
         "MODULE.bazel",
     ]
