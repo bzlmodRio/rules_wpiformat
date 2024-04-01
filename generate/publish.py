@@ -15,7 +15,7 @@ def main():
     group = get_wpiformat_group()
 
     module_template = os.path.join(
-        TEMPLATE_BASE_DIR, "styleguide", "MODULE.bazel.jinja2"
+        SCRIPT_DIR, "MODULE.bazel.jinja2"
     )
     module_json_template = None  # os.path.join(SCRIPT_DIR, "module_config.json.jinja2")
 
