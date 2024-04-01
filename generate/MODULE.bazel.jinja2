@@ -51,7 +51,6 @@ use_repo(
 {%- if group.is_python %}
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-
 pip.whl_mods(
     # we are using the appended_build_content.BUILD file
     # to add content to the request wheel BUILD file.
