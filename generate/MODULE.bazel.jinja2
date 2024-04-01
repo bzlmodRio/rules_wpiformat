@@ -1,0 +1,73 @@
+module(
+    name = "{{group.repo_name}}",
+    version = "{{group.sanitized_version}}{{group.patch}}",
+    compatibility_level = {{group.year}},
+)
+{%- if group.is_java %}
+
+{{bazel_dependencies.rules_java.module_dep()}}
+{{bazel_dependencies.rules_jvm_external.module_dep()}}
+{%- endif %}
+
+{%- if group.is_python %}
+
+{{bazel_dependencies.rules_python.module_dep()}}
+
+python = use_extension("@rules_python//python/extensions:python.bzl", "python")
+python.toolchain(
+    python_version = "3.10",
+)
+use_repo(python, "python_versions")
+
+register_toolchains(
+    "@python_versions//:all",
+)
+{%- endif %}
+{%- if group.has_protobuf %}
+{{bazel_dependencies.rules_proto.module_dep()}}
+{%- endif %}
+
+{%- if group.is_java %}
+
+maven = use_extension("@rules_jvm_external//:extensions.bzl", "maven")
+maven.install(
+    name = "{{group.repo_name}}_dependencies",
+    artifacts = [
+        {%- for maven_dep in group.get_all_maven_dependencies2() %}
+        "{{maven_dep[0]}}:{{maven_dep[1]}}",
+        {%- endfor %}
+    ],
+    lock_file = "@{{group.repo_name}}//:{{group.repo_name}}_dependencies_install.json",
+    repositories = [
+        "https://repo1.maven.org/maven2",
+        "https://repo.maven.apache.org/maven2/",
+    ],
+)
+use_repo(
+    maven,
+    "{{group.repo_name}}_dependencies",
+)
+{%- endif %}
+{%- if group.is_python %}
+
+pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
+
+pip.whl_mods(
+    # we are using the appended_build_content.BUILD file
+    # to add content to the request wheel BUILD file.
+    hub_name = "whl_mods_hub",
+    srcs_exclude_glob = ["site-packages/dataclasses.py"],
+    whl_name = "dataclasses",
+)
+use_repo(pip, "whl_mods_hub")
+pip.parse(
+    hub_name = "rules_wpiformat_pip",
+    python_version = "3.10",
+    requirements_lock = "//:requirements_lock.txt",
+    requirements_windows = "//:requirements_windows.txt",
+    whl_modifications = {
+        "@whl_mods_hub//:dataclasses.json": "dataclasses",
+    },
+)
+use_repo(pip, "rules_wpiformat_pip")
+{% endif %}

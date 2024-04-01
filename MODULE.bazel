@@ -17,8 +17,6 @@ register_toolchains(
 )
 
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-
-# Call whl_mods.create for the requests package.
 pip.whl_mods(
     # we are using the appended_build_content.BUILD file
     # to add content to the request wheel BUILD file.
