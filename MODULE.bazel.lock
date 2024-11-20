@@ -111,7 +111,7 @@
     "@@rules_python~//python/extensions:pip.bzl%pip": {
       "os:linux,arch:amd64": {
         "bzlTransitiveDigest": "Ik91JqPh5StJA5uBjx2F3IFSoIEds/CXL4/srWj8h74=",
-        "usagesDigest": "IfbFrkSyZlVj2t58DbHvBbmeSTy6r0NUzfitmMGgHAo=",
+        "usagesDigest": "0vAMyaTs1lsbRZ2FI5EQzawLG/JS9NS4O5m3EWSSKFo=",
         "recordedFileInputs": {
           "@@//requirements_lock.txt": "859b120bafaf7419c23404b9a0b8378bcf3c1bc4ab3a94aa20e3a3790c08e256"
         },
@@ -819,7 +819,7 @@
     "@@rules_python~//python/extensions:python.bzl%python": {
       "general": {
         "bzlTransitiveDigest": "RGX2v9xb9QjMJCorSvD+Rdl8qHuMT8nI7uP8Y+QfPC8=",
-        "usagesDigest": "gHdU10MqqhSS6p+Kz42EVUnJU5ljlPScvHTPbhJ5ki4=",
+        "usagesDigest": "YPMVNeCVHS+Hp0L3ToMJq9ScI/kojm5ewRJOtUDD0gQ=",
         "recordedFileInputs": {},
         "recordedDirentsInputs": {},
         "envVariables": {
