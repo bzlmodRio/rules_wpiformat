@@ -1,4 +1,5 @@
 import os
+
 from bazelrio_gentool.publish_module import publish_module
 from get_wpiformat_group import get_wpiformat_group
 
