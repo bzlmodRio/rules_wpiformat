@@ -1,6 +1,7 @@
 workspace(name = "rules_wpiformat")
 
 # Rule Dependencies
+
 load("//dependencies:load_rule_dependencies.bzl", "load_wpiformat_rule_dependencies")
 
 load_wpiformat_rule_dependencies()
