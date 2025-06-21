@@ -8,7 +8,7 @@ def get_wpiformat_group():
         is_python=True,
         include_wpiformat=False,
         repo_name="rules_wpiformat",
-        version="2024.45",
+        version="2025.33",
         year=1,
         maven_url="",
     )

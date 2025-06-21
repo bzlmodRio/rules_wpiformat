@@ -1,6 +1,6 @@
 module(
     name = "rules_wpiformat",
-    version = "2024.45",
+    version = "2025.33",
     compatibility_level = 1,
 )
 

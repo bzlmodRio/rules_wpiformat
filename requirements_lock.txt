@@ -265,7 +265,7 @@ typing-extensions==4.12.2 \
     --hash=sha256:04e5ca0351e0f3f85c6853954072df659d0d13fac324d0072316b67d7794700d \
     --hash=sha256:1a7ead55c7e559dd4dee8856e3a88b41225abfe1ce8df57b7c13915fe121ffb8
     # via black
-wpiformat==2024.45 \
-    --hash=sha256:89d3594fab048fbe1f8e05bd2fd4c64bcdbfd226174f0832a201b7d2740403f9 \
-    --hash=sha256:ec3569880d18dd52e1a7e34901ff9dedda22d64e3c8b29cce3b3ebef3784da80
+wpiformat==2025.33 \
+    --hash=sha256:97b423aac9777a193ba54752656b409e89cb2e72e8aec9e1dc3b002a6d734b20 \
+    --hash=sha256:d12a533a2a49f7bddc7f0d8703b9f33f442a40134799c1129a16675dba086fb4
     # via -r requirements.txt
