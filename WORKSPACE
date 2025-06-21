@@ -75,11 +75,6 @@ load("@rules_jvm_external//:setup.bzl", "rules_jvm_external_setup")
 
 rules_jvm_external_setup()
 
-# Transitive Dependencies
-load("//dependencies:load_transitive_dependencies.bzl", "load_wpiformat_transitive_dependencies")
-
-load_wpiformat_transitive_dependencies()
-
 load("//dependencies:load_dependencies.bzl", "load_wpiformat_dependencies")
 
 load_wpiformat_dependencies()
