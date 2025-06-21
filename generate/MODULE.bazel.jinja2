@@ -9,6 +9,8 @@ module(
 {{bazel_dependencies.rules_jvm_external.module_dep()}}
 {%- endif %}
 
+{{bazel_dependencies.rules_shell.module_dep()}}
+
 {%- if group.is_python %}
 
 {{bazel_dependencies.rules_python.module_dep()}}

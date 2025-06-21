@@ -4,8 +4,8 @@ module(
     compatibility_level = 1,
 )
 
-bazel_dep(name = "rules_python", version = "0.40.0")
 bazel_dep(name = "rules_shell", version = "0.4.0")
+bazel_dep(name = "rules_python", version = "0.40.0")
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
 python.toolchain(
