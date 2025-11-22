@@ -49,7 +49,18 @@ http_archive(
     url = "https://github.com/bazelbuild/rules_java/releases/download/8.12.0/rules_java-8.12.0.tar.gz",
 )
 
+http_archive(
+    name = "bazel_features",
+    sha256 = "a015f3f2ebf4f1ac3f4ca8ea371610acb63e1903514fa8725272d381948d2747",
+    strip_prefix = "bazel_features-1.31.0",
+    url = "https://github.com/bazel-contrib/bazel_features/releases/download/v1.31.0/bazel_features-v1.31.0.tar.gz",
+)
+
 # Rule Dependencies
+
+load("@bazel_features//:deps.bzl", "bazel_features_deps")
+
+bazel_features_deps()
 
 load("@com_google_protobuf//:protobuf_deps.bzl", "protobuf_deps")
 
